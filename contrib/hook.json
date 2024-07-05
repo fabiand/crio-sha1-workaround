@@ -2,7 +2,7 @@
     "version": "1.0.0",
     "hook": {
         "path": "/usr/bin/bash",
-        "args": ["bash", "-c", "update-crypto-policies --set DEFAULT:SHA1"]
+        "args": ["bash", "-c", "which update-crypto-policies && update-crypto-policies --set DEFAULT:SHA1 || :"]
     },
     "when": {
         "always": true
