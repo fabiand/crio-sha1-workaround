@@ -17,5 +17,4 @@ spec:
           contents:
             source: "data:text/plain;charset=utf-8;base64,$(base64 -w 0 contrib/hook.json)"
           mode: 644
-          overwrite: true
 EOY
