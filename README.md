@@ -2,10 +2,15 @@ OCI Hook for SHA1
 
 Stages: https://github.com/opencontainers/runtime-spec/blob/v1.0.2/config.md#posix-platform-hooks
 
-# Scripts
+# Design
 
-- `generate-mc.sh` - Generate a MachineConfig for deployment
-- `generate-copy-n-paste.sh` - Generate a copy-n-paste'able script for node debug pods
+- [`hook.sh`](contrib/hook.sh) - OCI hook to change the policy in a container
+- [`hook.json`](contrib/hook.json) - OCI hook configuration ot register the hook to run at container startup
+
+# Install
+
+- [`generate-mc.sh`](generate-mc.sh) - Generate a MachineConfig for deployment
+- [`generate-copy-n-paste.sh`](generate-copy-n-paste.sh) - Generate a copy-n-paste'able script for node debug pods
 
 # Usage
 
