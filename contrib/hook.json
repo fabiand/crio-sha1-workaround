@@ -2,19 +2,14 @@
     "version": "1.0.0",
     "hook": {
         "path": "/usr/bin/bash",
-        "args": ["bash", "-c", "which update-crypto-policies && update-crypto-policies --set DEFAULT:SHA1 || :"]
+        "args": ["bash", "-c", "which update-crypto-policies && update-crypto-policies --set DEFAULT:SHA1 || :"],
+        "env": ["OPENSSL_ENABLE_SHA1_SIGNATURES=1"]
     },
     "when": {
-        "always": true
-    },
-    "process": {
-        "user": {
-            "uid": 0,
-            "gid": 0
+        "annotations":  {
+            "^kubevirt\\.io/domain": ".*"
         }
     },
-    "stages": [
-        "startContainer"
-    ]
+    "stages": ["startContainer"]
 }
 

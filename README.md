@@ -1,6 +1,8 @@
 # OCI Hook for SHA1
 
 Stages: https://github.com/opencontainers/runtime-spec/blob/v1.0.2/config.md#posix-platform-hooks
+Hooks: https://github.com/containers/podman/blob/v0.6.2/pkg/hooks/docs/oci-hooks.5.md
+Hook: https://github.com/opencontainers/runtime-spec/blob/v1.2.0/config.md#posix-platform-hooks
 
 ## Design
 

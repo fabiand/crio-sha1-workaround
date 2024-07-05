@@ -2,17 +2,20 @@
 
 WHAT=$1
 
-DST=/etc/containers/oci/hooks.d/oci-hook-host-cryptopolicies.json
+DST=/etc/containers/oci/hooks.d/oci-hook-sha1.json
 
 case $WHAT in
-	mc|machineconfig)
+
+
+
+	mc|machineconfig|*)
 cat <<EOY
 apiVersion: machineconfiguration.openshift.io/v1
 kind: MachineConfig
 metadata:
   labels:
     machineconfiguration.openshift.io/role: worker
-  name: 99-install-oci-hook-cryptopolicies
+  name: 99-install-oci-hook-sha1
 spec:
   config:
     ignition:
@@ -27,15 +30,12 @@ spec:
 EOY
 	;;
 
+
+
 	shell)
 echo "cat > $DST <<'EOF'"
 cat contrib/hook.json
 echo "EOF"
-	;;
-
-	*)
-	echo -e "Usage: $0 <mc|shell>\nERR '$WHAT' not in (mc|shell)"
-	exit 1
 	;;
 esac
 
