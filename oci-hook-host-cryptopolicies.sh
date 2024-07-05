@@ -4,13 +4,15 @@ echo "Running $0"
 
 set -x
 
-CG_PATH=$(jq -er '.linux.cgroupsPath' < config.json)
 POD_NAME=$(jq -er '.annotations["io.kubernetes.pod.name"]' < config.json)
 
-if [[ "$CG_PATH" =~ .*"burst".* && "$POD_NAME" =~ "virt-launcher".* ]];
+if [[ "$POD_NAME" =~ "virt-launcher".* ]];
 then
   CONTAINERID=$(jq -er '.linux.cgroupsPath | split(":")[2]' < config.json)
-  runc update $CONTAINERID --memory-swap -1
+
+  runc exec $CONTAINERID -- update-crypto-policies --set DEFAULT:SHA1
+  runc exec $CONTAINERID -- update-crypto-policies --show
+  # should show: DEFAULT:SHA1
 fi
 
 
