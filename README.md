@@ -6,7 +6,7 @@ Hook: https://github.com/opencontainers/runtime-spec/blob/v1.2.0/config.md#posix
 
 ## Design
 
-- [`hook.json`](contrib/hook.json) - OCI hook configuration to change policy at container startup
+- [`hook.json`](contrib/hook.json) - OCI hook configuration to change policy at container startup for kubevirt pods
 
 ## Install
 
