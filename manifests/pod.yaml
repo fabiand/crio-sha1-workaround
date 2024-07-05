@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: crypto
+  name: virt-launcher-crypto
+spec:
+  containers:
+  - image: registry.access.redhat.com/ubi9/ubi
+    imagePullPolicy: Always
+    name: ubi
+    command: ["sh"]
+    args: ["-c", "update-crypto-policies --show ; sleep inf"]
+  securityContext: {}
+  terminationGracePeriodSeconds: 1
+status: {}
