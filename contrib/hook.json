@@ -2,8 +2,7 @@
     "version": "1.0.0",
     "hook": {
         "path": "/usr/bin/bash",
-        "args": ["bash", "-c", "which update-crypto-policies && update-crypto-policies --set DEFAULT:SHA1 || :"],
-        "env": ["OPENSSL_ENABLE_SHA1_SIGNATURES=1"]
+        "args": ["bash", "-c", "update-crypto-policies --set DEFAULT:SHA1"]
     },
     "when": {
         "annotations":  {
@@ -12,4 +11,3 @@
     },
     "stages": ["startContainer"]
 }
-
