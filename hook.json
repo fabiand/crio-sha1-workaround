@@ -6,6 +6,12 @@
     "when": {
         "always": true
     },
+    "process": {
+        "user": {
+            "uid": 0,
+            "gid": 0
+        }
+    },
     "stages": [
         "poststart"
     ]
