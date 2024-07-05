@@ -15,9 +15,15 @@ Hook: https://github.com/opencontainers/runtime-spec/blob/v1.2.0/config.md#posix
 ## Usage
 
     $ generate.sh mc | oc apply -f -
+
     # Wait for MC to be done
+    $ oc wait mcp worker --for condition=Updated=False --timeout=10s
+    $ oc wait mcp worker --for condition=Updated=True --timeout=15m
+
     $ oc apply --wait -f manifests/pod.yaml
     pod/virt-launcher-crypto created
+
     $ oc logs virt-launcher-crypto
     DEFAULT:SHA1
+
     $ oc delete -f manifests/pod.yaml
