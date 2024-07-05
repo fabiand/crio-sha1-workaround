@@ -1,0 +1,12 @@
+{
+    "version": "1.0.0",
+    "hook": {
+        "path": "/opt/oci-hook-host-cryptopolicies.sh"
+    },
+    "when": {
+        "always": true
+    },
+    "stages": [
+        "poststart"
+    ]
+}
