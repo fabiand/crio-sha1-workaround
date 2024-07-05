@@ -13,11 +13,6 @@ config:
     version: 3.1.0
   storage:
     files:
-      - path: "/opt/oci-hook-host-cryptopolicies.sh"
-        contents:
-          source: "data:text/plain;charset=utf-8;base64,$(base64 -w 0 contrib/hook.sh)"
-        mode: 755
-        overwrite: true
       - path: "/run/containers/oci/hooks.d/oci-hook-host-cryptopolicies.json"
         contents:
           source: "data:text/plain;charset=utf-8;base64,$(base64 -w 0 contrib/hook.json)"

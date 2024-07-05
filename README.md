@@ -4,8 +4,7 @@ Stages: https://github.com/opencontainers/runtime-spec/blob/v1.0.2/config.md#pos
 
 ## Design
 
-- [`hook.sh`](contrib/hook.sh) - OCI hook to change the policy in a container
-- [`hook.json`](contrib/hook.json) - OCI hook configuration ot register the hook to run at container startup
+- [`hook.json`](contrib/hook.json) - OCI hook configuration to change policy at container startup
 
 ## Install
 

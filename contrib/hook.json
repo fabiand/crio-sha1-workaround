@@ -1,7 +1,8 @@
 {
     "version": "1.0.0",
     "hook": {
-        "path": "/opt/oci-hook-host-cryptopolicies.sh"
+        "path": "/usr/bin/bash",
+        "args": ["bash", "-c", "update-crypto-policies --set DEFAULT:SHA1"]
     },
     "when": {
         "always": true
@@ -13,6 +14,7 @@
         }
     },
     "stages": [
-        "poststart"
+        "startContainer"
     ]
 }
+
