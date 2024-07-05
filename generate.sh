@@ -2,6 +2,8 @@
 
 WHAT=$1
 
+DST=/etc/containers/oci/hooks.d/oci-hook-host-cryptopolicies.json
+
 case $WHAT in
 	mc|machineconfig)
 cat <<EOY
@@ -21,12 +23,12 @@ spec:
             source: "data:text/plain;charset=utf-8;base64,$(base64 -w 0 contrib/hook.json)"
           filesystem: root
           mode: 0644
-          path: /etc/containers/oci/hooks.d/oci-hook-host-cryptopolicies.json
+          path: $DST
 EOY
 	;;
 
 	shell)
-echo "cat > $FSROOT/run/containers/oci/hooks.d/oci-hook-host-cryptopolicies.json <<'EOF'"
+echo "cat > $DST <<'EOF'"
 cat contrib/hook.json
 echo "EOF"
 	;;
