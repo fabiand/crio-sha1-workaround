@@ -2,7 +2,7 @@
     "version": "1.0.0",
     "hook": {
         "path": "/usr/bin/bash",
-        "args": ["bash", "-c", "update-crypto-policies --set DEFAULT:SHA1 ; touch /.sha1_try_enable"]
+        "args": ["bash", "-c", "update-crypto-policies --set DEFAULT:SHA1 ; touch /etc/.sha1_try_enable"]
     },
     "when": {
         "annotations":  {
