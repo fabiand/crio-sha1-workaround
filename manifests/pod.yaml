@@ -10,7 +10,7 @@ spec:
   containers:
   - image: registry.access.redhat.com/ubi9/ubi
     imagePullPolicy: Always
-    name: ubi
+    name: compute
     command: ["sh"]
     args: ["-c", "update-crypto-policies --show ; sleep inf"]
   securityContext: {}
