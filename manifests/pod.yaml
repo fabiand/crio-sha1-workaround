@@ -8,7 +8,7 @@ metadata:
   name: virt-launcher-crypto
 spec:
   containers:
-  - image: registry.access.redhat.com/ubi9/ubi
+  - image: registry.redhat.io/container-native-virtualization/virt-launcher-rhel9:v4.13
     imagePullPolicy: Always
     name: compute
     command: ["sh"]
