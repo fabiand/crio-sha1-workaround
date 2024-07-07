@@ -6,9 +6,7 @@
     },
     "when": {
         "annotations":  {
-            "^kubevirt\\.io/domain$": ".*",
-            "^io\\.kubernetes\\.pod\\.name$": "^virt-launcher-",
-            "^io\\.kubernetes\\.container\\.name$": "^compute$"
+            "^sha1\\.kubevirt\\.io/enabled$": "^true$"
         }
     },
     "stages": ["startContainer"]

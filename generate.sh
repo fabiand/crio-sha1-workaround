@@ -6,9 +6,14 @@ DST=/etc/containers/oci/hooks.d/oci-hook-sha1.json
 
 case $WHAT in
 
+	s)
+echo "cat > $DST <<'EOF'"
+cat contrib/hook.json
+echo "EOF"
+	;;
 
 
-	mc|machineconfig|*)
+	*)
 cat <<EOY
 apiVersion: machineconfiguration.openshift.io/v1
 kind: MachineConfig
@@ -32,10 +37,5 @@ EOY
 
 
 
-	shell)
-echo "cat > $DST <<'EOF'"
-cat contrib/hook.json
-echo "EOF"
-	;;
 esac
 
