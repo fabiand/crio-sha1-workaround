@@ -1,12 +1,13 @@
 # OCI Hook for SHA1
 
-Stages: https://github.com/opencontainers/runtime-spec/blob/v1.0.2/config.md#posix-platform-hooks
-Hooks: https://github.com/containers/podman/blob/v0.6.2/pkg/hooks/docs/oci-hooks.5.md
-Hook: https://github.com/opencontainers/runtime-spec/blob/v1.2.0/config.md#posix-platform-hooks
+- Stages: https://github.com/opencontainers/runtime-spec/blob/v1.0.2/config.md#posix-platform-hooks
+- Hooks: https://github.com/containers/podman/blob/v0.6.2/pkg/hooks/docs/oci-hooks.5.md
+- Hook: https://github.com/opencontainers/runtime-spec/blob/v1.2.0/config.md#posix-platform-hooks
 
 ## Design
 
-- [`hook.json`](contrib/hook.json) - OCI hook configuration to change policy at container startup for kubevirt pods
+- [`hook.json`](contrib/hook.json) - OCI hook configuration to change policy at container startup
+  for kubevirt compute containers
 
 ## Install
 

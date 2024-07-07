@@ -5,9 +5,9 @@
         "args": ["bash", "-c", "update-crypto-policies --set DEFAULT:SHA1 ; touch /etc/.sha1_try_enable"]
     },
     "when": {
-        "annotations":  {
-            "^sha1\\.kubevirt\\.io/enabled$": "^true$"
-        }
+        "commands": [
+            ".*virt-launcher-monitor.*"
+        ]
     },
     "stages": ["startContainer"]
 }
