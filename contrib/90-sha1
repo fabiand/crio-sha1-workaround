@@ -1,0 +1,4 @@
+[crio.runtime]
+default_env = [
+  "OPENSSL_ENABLE_SHA1_SIGNATURES=1",
+]

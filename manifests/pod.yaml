@@ -3,7 +3,6 @@ kind: Pod
 metadata:
   annotations:
     kubevirt.io/domain: crypto
-    sha1.kubevirt.io/enabled: "true"
   labels:
     app: crypto
   name: virt-launcher-crypto
@@ -12,8 +11,8 @@ spec:
   - image: registry.redhat.io/container-native-virtualization/virt-launcher-rhel9:v4.13
     imagePullPolicy: Always
     name: compute
-    command: ["sh"]
-    args: ["-c", "update-crypto-policies --show ; ls -shal /etc/.sha1_try_enable ; sleep inf"]
+    command: ["bash"]
+    args: ["-c", "env | grep OPENSSL ; sleep inf"]
   securityContext: {}
   terminationGracePeriodSeconds: 1
 status: {}

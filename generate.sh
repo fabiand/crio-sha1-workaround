@@ -1,14 +1,13 @@
 #!/usr/bin/bash
 
-WHAT=$1
+WHAT=contrib/90-sha1
+WHERE=/etc/crio/crio.conf.d/90-sha1
 
-DST=/etc/containers/oci/hooks.d/oci-hook-sha1.json
-
-case $WHAT in
+case $1 in
 
 	s)
-echo "cat > $DST <<'EOF'"
-cat contrib/hook.json
+echo "cat > $WHERE <<'EOF'"
+cat $WHAT
 echo "EOF"
 	;;
 
@@ -20,7 +19,7 @@ kind: MachineConfig
 metadata:
   labels:
     machineconfiguration.openshift.io/role: worker
-  name: 99-install-oci-hook-sha1
+  name: 99-install-crio-sha1-workaround
 spec:
   config:
     ignition:
@@ -28,10 +27,10 @@ spec:
     storage:
       files:
         - contents:
-            source: "data:text/plain;charset=utf-8;base64,$(base64 -w 0 contrib/hook.json)"
+            source: "data:text/plain;charset=utf-8;base64,$(base64 -w 0 $WHAT)"
           filesystem: root
           mode: 0644
-          path: $DST
+          path: $WHERE
 EOY
 	;;
 

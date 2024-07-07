@@ -1,0 +1,2 @@
+- launcher runs as non-root, update requires root
+- createContainer does not have a mounted fs yet

@@ -1,13 +1,10 @@
-# OCI Hook for SHA1
+# CRI-O Conf for SHA1
 
-- Stages: https://github.com/opencontainers/runtime-spec/blob/v1.0.2/config.md#posix-platform-hooks
-- Hooks: https://github.com/containers/podman/blob/v0.6.2/pkg/hooks/docs/oci-hooks.5.md
-- Hook: https://github.com/opencontainers/runtime-spec/blob/v1.2.0/config.md#posix-platform-hooks
+- https://fedoraproject.org/wiki/SHA1SignaturesGuidance
 
 ## Design
 
-- [`hook.json`](contrib/hook.json) - OCI hook configuration to change policy at container startup
-  for kubevirt compute containers
+Install a CRIO snippet for setting the SHA1 env var.
 
 ## Install
 
@@ -25,6 +22,6 @@
     pod/virt-launcher-crypto created
 
     $ oc logs virt-launcher-crypto
-    DEFAULT:SHA1
+    OPENSSL_ENABLE_SHA1_SIGNATURES=1
 
     $ oc delete -f manifests/pod.yaml
