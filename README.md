@@ -8,9 +8,7 @@ Install a CRIO snippet for setting the SHA1 env var.
 
 ## Install
 
-- [`generate.sh`](generate.sh) - Generate a MachineConfig for deployment - or - a shell script
-
-## Usage
+[`generate.sh`](generate.sh) - Generate a MachineConfig for deployment - or - a shell script
 
     $ generate.sh mc | oc apply -f -
 
