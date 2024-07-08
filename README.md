@@ -18,6 +18,8 @@ Install a CRIO snippet for setting the SHA1 env var.
     $ oc wait mcp worker --for condition=Updated=False --timeout=10s
     $ oc wait mcp worker --for condition=Updated=True --timeout=15m
 
+## Test
+
     $ oc apply --wait -f manifests/pod.yaml
     pod/virt-launcher-crypto created
 
