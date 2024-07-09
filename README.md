@@ -21,7 +21,12 @@ Install a CRIO snippet for setting the SHA1 env var.
     $ oc apply --wait -f manifests/pod.yaml
     pod/virt-launcher-crypto created
 
-    $ oc logs virt-launcher-crypto
+    # A PASS looks like:
+    $ oc rsh -c compute virt-launcher-crypto sh -c "env | grep OPENSSL"
     OPENSSL_ENABLE_SHA1_SIGNATURES=1
+
+    # A FAILURE looks like:
+    $ oc rsh -c compute virt-launcher-crypto sh -c "env | grep OPENSSL"
+    command terminated with exit code 1
 
     $ oc delete -f manifests/pod.yaml
